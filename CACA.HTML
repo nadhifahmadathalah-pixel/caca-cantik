@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caca Cantikk ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe1ec, #f8b6d0, #fce4ec);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 25px;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255,255,255,0.75);
+    padding: 30px 25px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(194, 80, 130, 0.25),
+                0 8px 0 #e99bbd;
+    border: 2px solid white;
+    position: relative;
+    z-index: 2;
+    animation: muncul 1.2s ease;
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+h1 {
+    color: #d63384;
+    font-size: 29px;
+    margin-bottom: 8px;
+    text-shadow: 2px 3px 5px #f5b4d0;
+}
+
+.subtitle {
+    color: #a64d79;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.photo {
+    width: 210px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 6px solid white;
+    box-shadow: 0 12px 25px rgba(180, 65, 120, .3);
+    transform: rotate(-2deg);
+    transition: .4s;
+}
+
+.photo:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+h2 {
+    color: #d63384;
+    margin-top: 25px;
+    font-size: 23px;
+}
+
+.description {
+    color: #85516b;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 12px 0 20px;
+}
+
+button {
+    background: linear-gradient(135deg, #ec4899, #d63384);
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #a82765;
+    transition: .2s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 0 #a82765;
+}
+
+button:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #a82765;
+}
+
+#pesan {
+    display: none;
+    color: #c02670;
+    margin-top: 20px;
+    line-height: 1.8;
+    font-size: 14px;
+    animation: muncul 1s;
+}
+
+.footer {
+    color: #bd6791;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #e83e8c;
+    font-size: 22px;
+    animation: terbang 6s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes terbang {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: 1; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Hai, Caca! 💗</h1>
+    <p class="subtitle">A little website for someone special</p>
+
+    <!-- GANTI FOTO DI SINI -->
+    <img src="caca.jpg.jpeg" class="photo" alt="Foto Caca">
+
+    <h2>CACA CANTIKK! 🌷</h2>
+
+    <p class="description">
+        Perempuan cantik yang bukan cuma indah dilihat,
+        tapi juga punya hati yang baik.
+        Tetap jadi Caca yang ceria dan selalu menebarkan
+        kebahagiaan, yaa!
+    </p>
+
+    <button onclick="tampilkanPesan()">
+        Klik di sini 💌
+    </button>
+
+    <div id="pesan">
+        <h3>Untuk Caca ❤️</h3>
+        Jangan pernah merasa kurang berharga.
+        Kamu punya keistimewaan dengan caramu sendiri.
+        Semoga hari-harimu selalu dipenuhi kebahagiaan.
+        Jangan lupa senyum, Caca cantikk! 🥰
+        <br><br>
+        <b>You deserve all the good things! 💗</b>
+    </div>
+
+    <p class="footer">
+        Made with ❤️ just for Caca
+    </p>
+
+</div>
+
+<script>
+function tampilkanPesan() {
+    let pesan = document.getElementById("pesan");
+
+    if (pesan.style.display === "block") {
+        pesan.style.display = "none";
+    } else {
+        pesan.style.display = "block";
+    }
+}
+
+// Efek love berjatuhan
+function buatLove() {
+    const love = document.createElement("div");
+
+    love.className = "heart";
+    love.innerHTML = ["❤️", "💗", "💕", "💖", "🌸"]
+        [Math.floor(Math.random() * 5)];
+
+    love.style.left = Math.random() * 100 + "vw";
+    love.style.fontSize = (15 + Math.random() * 20) + "px";
+    love.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(love);
+
+    setTimeout(() => {
+        love.remove();
+    }, 8000);
+}
+
+setInterval(buatLove, 450);
+</script>
+
+</body>
+</html>
